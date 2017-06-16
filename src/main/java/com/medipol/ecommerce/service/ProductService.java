@@ -17,7 +17,7 @@ public class ProductService {
         products.add(new Product(2, "addidas", 300));
     }
 
-    public void add(Integer id,String name, Integer quantity){
+    public Product add(Integer id, String name, Integer quantity){
         //TODO
 
         Product newProduct = new Product(id,name,quantity);
@@ -27,6 +27,7 @@ public class ProductService {
 
         //products.add(new Product(id,name,quantity));
 
+        return newProduct;
     }
 
     public void delete(Integer id) {
@@ -41,10 +42,10 @@ public class ProductService {
         }
     }
 
-    public void update(Integer id, String name, Integer price){
+    public void update(Integer id, String name, Integer price) {
         //TODO
-        for (int i = 0 ; i <products.size();i++){
-            if (products.get(i).getId().equals(id)){
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getId().equals(id)) {
                 products.get(i).setName(name);
                 products.get(i).setPrice(price);
             }
@@ -67,5 +68,9 @@ public class ProductService {
 
         }
         return null;
+    }
+
+    public List<Product> getProducts() {
+        return products;
     }
 }
